@@ -1,6 +1,11 @@
-import "../App.css";
+import { useEffect } from "react";
+import { connect } from "react-redux";
+import { handleInitialData } from "../redux/actions/shared";
 
-function App() {
+function App(props) {
+  useEffect(() => {
+    props.dispatch(handleInitialData());
+  }, [props]);
   return (
     <div className="App">
       <h1>Would you rather?</h1>
@@ -8,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App);
