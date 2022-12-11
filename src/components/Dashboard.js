@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import Question from "./Question";
 
 const Dashboard = (props) => {
   return (
@@ -7,7 +8,7 @@ const Dashboard = (props) => {
       <ul className="dashboard-list">
         {props.questionIds.map((id) => (
           <li key={id}>
-            <div>QUESTION ID: {id}</div>
+            <Question id={id} />
           </li>
         ))}
       </ul>
